@@ -11,10 +11,11 @@ public class Crystal : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        // Check if the thing that touched us is tagged 'Player'.
         if (other.CompareTag("Player"))
-        {   
-            // Destroy this crystal GameObject.
+        {
+            // Tell the GameManager a crystal was collected.
+            GameManager.instance.CrystalCollected();
+            // Then destroy this crystal.
             Destroy(gameObject);
         }
     }
