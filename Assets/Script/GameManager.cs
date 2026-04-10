@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text timerText;
     public GameObject winPanel;
+    public GameObject gameOverPanel;
     // Game settings
     public float timeLimit = 60f; // 60 second timer
                                   // Private tracking variables
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (gameOver) return; // Stop everything if game is finished.
-                              // Count down the timer.
+        // Count down the timer.
         timeRemaining -= Time.deltaTime;
         // Clamp so it never goes below 0.
         if (timeRemaining < 0) timeRemaining = 0;
@@ -61,10 +62,18 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         winPanel.SetActive(true);
     }
-    void GameLost()
+    public void GameLost()
     {
         gameOver = true;
-        // We'll add a proper Game Over screen in Week 5.
-        Debug.Log("Time's up! Game Over.");
+        gameOverPanel.SetActive(true);
+
+    }
+
+    public void TriggerGameOver()
+    {
+        if (gameOver) return;
+        gameOver = true;
+        Time.timeScale = 0; // Freeze the game
+        gameOverPanel.SetActive(true);
     }
 }
