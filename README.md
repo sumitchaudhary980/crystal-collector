@@ -2,7 +2,7 @@
 
 A fast-paced Unity 3D arcade game where you control a ball and race against
 the clock to collect all the crystals scattered around the level.
-Every crystal gives you a point — collect them all before time runs out!
+Every crystal gives you a point — collect them all before the time runs out!
 
 ---
 
