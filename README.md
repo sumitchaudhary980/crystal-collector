@@ -47,7 +47,7 @@ Every crystal gives you a point — collect them all before time runs out!
 
 ## 📸 Screenshots
 
-Stull in developing phase
+Still in developing phase
 
 ---
 
